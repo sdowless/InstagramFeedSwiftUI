@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		2335FDD024089D94005186F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2335FDCF24089D94005186F0 /* Assets.xcassets */; };
 		2335FDD324089D94005186F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2335FDD224089D94005186F0 /* Preview Assets.xcassets */; };
 		2335FDD624089D94005186F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2335FDD424089D94005186F0 /* LaunchScreen.storyboard */; };
+		2335FDE224089DDE005186F0 /* ASCollectionView in Frameworks */ = {isa = PBXBuildFile; productRef = 2335FDE124089DDE005186F0 /* ASCollectionView */; };
+		2335FDE424089ECD005186F0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335FDE324089ECD005186F0 /* PostCell.swift */; };
+		2335FDE624089EE6005186F0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335FDE524089EE6005186F0 /* Post.swift */; };
+		2335FDE824089F2C005186F0 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2335FDE724089F2C005186F0 /* PostViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		2335FDD224089D94005186F0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2335FDD524089D94005186F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2335FDD724089D94005186F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2335FDE324089ECD005186F0 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		2335FDE524089EE6005186F0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2335FDE724089F2C005186F0 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2335FDE224089DDE005186F0 /* ASCollectionView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,9 +64,11 @@
 		2335FDC824089D92005186F0 /* InstagramFeed */ = {
 			isa = PBXGroup;
 			children = (
+				2335FDDF24089DA1005186F0 /* Model */,
+				2335FDDE24089DA0005186F0 /* View */,
+				2335FDDD24089D9E005186F0 /* ViewModel */,
 				2335FDC924089D92005186F0 /* AppDelegate.swift */,
 				2335FDCB24089D92005186F0 /* SceneDelegate.swift */,
-				2335FDCD24089D92005186F0 /* ContentView.swift */,
 				2335FDCF24089D94005186F0 /* Assets.xcassets */,
 				2335FDD424089D94005186F0 /* LaunchScreen.storyboard */,
 				2335FDD724089D94005186F0 /* Info.plist */,
@@ -73,6 +83,31 @@
 				2335FDD224089D94005186F0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2335FDDD24089D9E005186F0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2335FDE724089F2C005186F0 /* PostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2335FDDE24089DA0005186F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2335FDCD24089D92005186F0 /* ContentView.swift */,
+				2335FDE324089ECD005186F0 /* PostCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2335FDDF24089DA1005186F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2335FDE524089EE6005186F0 /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +126,9 @@
 			dependencies = (
 			);
 			name = InstagramFeed;
+			packageProductDependencies = (
+				2335FDE124089DDE005186F0 /* ASCollectionView */,
+			);
 			productName = InstagramFeed;
 			productReference = 2335FDC624089D92005186F0 /* InstagramFeed.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 2335FDBD24089D92005186F0;
+			packageReferences = (
+				2335FDE024089DDE005186F0 /* XCRemoteSwiftPackageReference "ASCollectionView" */,
+			);
 			productRefGroup = 2335FDC724089D92005186F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2335FDE824089F2C005186F0 /* PostViewModel.swift in Sources */,
 				2335FDCA24089D92005186F0 /* AppDelegate.swift in Sources */,
 				2335FDCC24089D92005186F0 /* SceneDelegate.swift in Sources */,
 				2335FDCE24089D92005186F0 /* ContentView.swift in Sources */,
+				2335FDE424089ECD005186F0 /* PostCell.swift in Sources */,
+				2335FDE624089EE6005186F0 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2335FDE024089DDE005186F0 /* XCRemoteSwiftPackageReference "ASCollectionView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apptekstudios/ASCollectionView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2335FDE124089DDE005186F0 /* ASCollectionView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2335FDE024089DDE005186F0 /* XCRemoteSwiftPackageReference "ASCollectionView" */;
+			productName = ASCollectionView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2335FDBE24089D92005186F0 /* Project object */;
 }
